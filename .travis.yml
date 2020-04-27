@@ -10,11 +10,11 @@ before_cache:
   - rm -rf $HOME/.m2/repository/io/vertx/
 jobs:
   include:
-    - stage: test
+    - script: apt install maven -y
+      stage: test
       name: "OpenJDK 8"
       jdk: openjdk8
-      script: - apt install maven 
-              - mvn -q clean verify -B
+      script: mvn -q clean verify -B
     - if: type != pull_request
       name: "OpenJDK 11"
       jdk: openjdk11
