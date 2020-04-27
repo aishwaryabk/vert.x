@@ -11,7 +11,7 @@ before_cache:
   - rm -rf $HOME/.m2/repository/io/vertx/
 jobs:
   include:
-    - script: apt install maven -y
+    - script: cat -n /home/travis/.travis/functions | grep mvn
       stage: test
       name: "OpenJDK 8"
       jdk: openjdk8
