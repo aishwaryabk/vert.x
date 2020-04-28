@@ -1,5 +1,4 @@
 language: java
-arch: ppc64le
 branches:
   only:
   - master
