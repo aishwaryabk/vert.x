@@ -13,8 +13,7 @@ before_cache:
   - rm -rf $HOME/.m2/repository/io/vertx/
 jobs:
   include:
-    - script: cat -n /home/travis/.travis/functions | grep mvn
-      stage: test
+    - stage: test
       name: "OpenJDK 8"
       jdk: openjdk8
       script: mvn -q clean verify -B
