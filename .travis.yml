@@ -9,9 +9,12 @@ cache:
     - $HOME/.m2
 addon:
   apt: maven
+
+before_install:
+   - sudo apt install -y maven libnetty-java/xenial libnetty-tcnative-java/xenial libhawtjni-runtime-java/xenial libnetty-3.9-java/xenial
+
 before_cache:
-  - sudo apt install -y maven libnetty-java/xenial libnetty-tcnative-java/xenial libhawtjni-runtime-java/xenial libnetty-3.9-java/xenial
-  - rm -rf $HOME/.m2/repository/io/vertx/
+   - rm -rf $HOME/.m2/repository/io/vertx/
   
 jobs:
   include:
